@@ -1,0 +1,3 @@
+# ordo.core
+
+::: ordo.core

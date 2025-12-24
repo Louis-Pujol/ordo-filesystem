@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
 name = "ordo"
@@ -25,9 +25,22 @@ keywords = ["filesystem", "reversible", "undo", "operations"]
 [project.urls]
 Homepage = "https://github.com/Louis-Pujol/ordo-filesystem"
 Repository = "https://github.com/Louis-Pujol/ordo-filesystem"
+Documentation = "https://louis-pujol.github.io/ordo-filesystem/"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[project.optional-dependencies]
+docs = [
+    "mkdocs>=1.5.0",
+    "mkdocs-material>=9.0.0",
+    "mkdocstrings[python]>=0.24.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pre-commit>=3.0.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ordo"]
 
 [tool.ruff]
 line-length = 88
