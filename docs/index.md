@@ -68,7 +68,7 @@ cd ordo-filesystem
 pip install -e .
 
 # Install development dependencies
-pip install pre-commit pytest mkdocs mkdocs-material mkdocstrings[python]
+pip install -e .[dev,docs]
 
 # Setup pre-commit hooks
 pre-commit install
