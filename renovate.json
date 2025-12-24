@@ -1,0 +1,19 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "pre-commit": {
+    "enabled": true
+  },
+  "schedule": [
+    "before 5am on monday"
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["pre-commit"],
+      "automerge": true,
+      "automergeType": "branch"
+    }
+  ]
+}
